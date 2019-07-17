@@ -10,7 +10,7 @@ export default (state , action = null ) => {
         }
         default:{
 
-            return 0;
+            return "A";
 
         }
     }

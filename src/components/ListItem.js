@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import { View , Text , TouchableWithoutFeedback} from 'react-native';
+import { View , Text , TouchableWithoutFeedback , LayoutAnimation} from 'react-native';
 import { Card, CardSection } from './common';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 class ListItem extends Component{
+
+    componentDidUpdate(){
+
+        LayoutAnimation.spring();
+    }
 
     render(){
 
@@ -48,7 +53,7 @@ class ListItem extends Component{
             this.props.library.item.id === this.props.selectedItem ? (
             
                 <CardSection>
-                    <Text> { this.props.library.item.description } </Text>
+                    <Text style={{flex:1 , padding:15}}> { this.props.library.item.description } </Text>
                 </CardSection>
             ): (
                 <View>
